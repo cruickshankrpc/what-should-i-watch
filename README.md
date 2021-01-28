@@ -14,7 +14,7 @@ I had a lot of fun making the design for the app in [Figma](https://www.figma.co
 
 ##### Mobile
 
-![mobile image](./media/what-should-i-watch-mobile_iphone12black_portrait.png ==250x)
+![mobile image](./media/what-should-i-watch-mobile_iphone12black_portrait.png =250x)
 
 ###### Desktop
 
