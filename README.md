@@ -18,9 +18,12 @@ I had a lot of fun making the design for the app in [Figma](https://www.figma.co
 <img src="/media/what-should-i-watch-mobile_iphone12black_portrait.png" alt="mobile home" width="200" >
 </p>
 
-###### Desktop
 
+##### Desktop
 
+<p align="center">
+<img src= width="800" >
+</p>
 
 
 
