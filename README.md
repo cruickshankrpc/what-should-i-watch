@@ -10,11 +10,11 @@ Fun little (made by womxn) film randomiser application inspired by ["Where the f
 
 #### Design
 
-I had a lot of fun making the design for the app in [Figma](https://www.figma.com/file/GfhSUCNhyxbnGCkMImUDuM/What-Should-I-Watch%3F%3F); incorporating a fun, simple ~ millenial ~ aesthetic with bold colours, a sans-serif font, and throwback pixellated icons: 
+I had a lot of fun making the design for the app in [Figma](https://www.figma.com/file/GfhSUCNhyxbnGCkMImUDuM/What-Should-I-Watch%3F%3F); incorporating a fun, simple,  ~ millenial ~ aesthetic with bold colours, a sans-serif font, and throwback pixellated icons: 
 
 ##### Mobile
 
-<img src="/media/what-should-i-watch-mobile_iphone12black_portrait.png" alt="mobile home" width="200" align="center">
+<img align="center" src="/media/what-should-i-watch-mobile_iphone12black_portrait.png" alt="mobile home" width="200" >
 
 
 ###### Desktop
