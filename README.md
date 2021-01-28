@@ -14,8 +14,9 @@ I had a lot of fun making the design for the app in [Figma](https://www.figma.co
 
 ##### Mobile
 
-<img align="center" src="/media/what-should-i-watch-mobile_iphone12black_portrait.png" alt="mobile home" width="200" >
-
+<p align="center">
+<img src="/media/what-should-i-watch-mobile_iphone12black_portrait.png" alt="mobile home" width="200" >
+</p>
 
 ###### Desktop
 
