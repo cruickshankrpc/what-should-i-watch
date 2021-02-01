@@ -16,9 +16,9 @@
   left: 50px;
   top: 223px;
   border: 8px solid rgba(0, 0, 0, 1);
+  border-radius: 15px;
   background: #ffecea;
   box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
   margin-bottom: 50px;
 }
 
@@ -40,3 +40,21 @@
   left: 266px;
   top: 400px;
 }
+
+/*** FOOTER ***/
+footer {
+  /* display: flex;
+  justify-content: space-between; */
+  position: fixed;
+  /* margin-top: auto; */
+  bottom: 0;
+  /* left: 0; */
+}
+
+.logo {
+  margin-right: 200px;
+}
+
+/* .tofu {
+  right: 0;
+} */
