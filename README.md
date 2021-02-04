@@ -2,7 +2,7 @@
 
 ## Overview
 
-Fun little (made by womxn) film randomiser application inspired by ["Where the f*** should I go eat?"](http://wtfsigte.com/) and consequent noughties corners of the internet. For those with Netflix fatigue. For those wishing to see more gems made by womxn. Enjoy! 
+Fun little (made by womxn) film randomiser inspired by ["Where the f*** should I go eat?"](http://wtfsigte.com/) and consequent noughties corners of the internet. For those with Netflix fatigue. For those wishing to see more gems made by womxn. Enjoy! 
 
 ## Process
 
