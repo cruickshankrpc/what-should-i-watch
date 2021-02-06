@@ -12,8 +12,15 @@ const HomePage = () => {
     axios.get(`https://api.themoviedb.org/3/list/5233088?api_key=${API_KEY}&language=en-US&page=1`)
       .then(film => {
         setFilmList(film.data.items);
-        console.log(film.data.items);
-      })
+
+        // Logic to get a random film from filmData array
+        const filmData = film.data.items;
+        console.log(filmData)
+        const randomFilm = filmData[Math.floor(Math.random() * filmData.length)];
+        console.log('rando:', randomFilm)
+      }
+
+      )
   })
 
   useEffect(() => {
