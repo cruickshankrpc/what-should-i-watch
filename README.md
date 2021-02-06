@@ -25,6 +25,15 @@ I had a lot of fun making the design for the app in [Figma](https://www.figma.co
 <img src="/what-should-i-watch/media/wsiw-desktop.gif" width="800" >
 </p>
 
+#### Set up 
+
+npx-create-react-app what-should-i-watch
+-> creates app 
+-> download dependencies (react-router-dom, axios)
+-> create HomePage 
+-> import Switch and Route from react-router-dom into App.js so that I can navigate between pages
+-> put API key in dotenv file, add .env to my .gitignore file
+-> check that I can make an API call to fetch data using react hooks (useState & useEffect) and axios, console log the data
 
 
 

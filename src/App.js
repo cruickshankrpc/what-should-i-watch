@@ -1,20 +1,23 @@
-import './App.css';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+import HomePage from './components/HomePage';
+import FilmPage from './components/FilmPage';
+import Footer from './components/Footer';
 import cursor from './cursor.png';
-import Footer from './Footer';
+
+import './styles/styles.scss';
+
+
 
 function App() {
   return (
-    <div className="App">
-
-      <div className="home_box">
-        <p className="home_text">What the f*** should I watch ?</p>
-      </div>
-      <div ></div>
-      <img className="cursor_img" src={cursor} alt="cursor" />
-      {/* <div component={Footer}></div> */}
-      <Footer></Footer>
-    </div>
-  );
+    <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/filmpage/:name/:id" component={FilmPage}/>
+    </Switch>
+  )
+  
 }
 
 export default App;
