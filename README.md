@@ -35,7 +35,7 @@ npx-create-react-app what-should-i-watch
 -> import Switch and Route from react-router-dom into App.js so that I can navigate between pages
 -> put API key in dotenv file, add .env to my .gitignore file
 -> check that I can make an API call to fetch data using react hooks (useState & useEffect) and axios, console log the data
--> write logic to retrieve random film from the list :
+-> write logic to retrieve random film from the custom list I made on TMDB:
 ```js
 const myFilmList = (() => {
     axios.get(`https://api.themoviedb.org/3/list/5233088?api_key=${API_KEY}&language=en-US&page=1`)
@@ -52,6 +52,11 @@ const myFilmList = (() => {
       )
   })
 ```
+This logic is limited, however, as it allows for repeats. This is something I will work on. 
+-> use randomFilm to Link to filmpage
+-> build FilmPage component. 
+-> find correct API call in Insomnia to return the JSON for the DIRECTOR: credits API call with movie ID
+->
 
 
 
