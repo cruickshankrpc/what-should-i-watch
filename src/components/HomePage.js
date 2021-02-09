@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import cursor from '../cursor.png';
+
 const HomePage = () => {
   
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
@@ -17,7 +18,7 @@ const HomePage = () => {
 
         // Logic to get a random film from filmData array
         const filmData = film.data.items;
-        console.log('filmData:', filmData)
+        console.log('filmData1:', filmData)
         const shuffledFilm = filmData[Math.floor(Math.random() * filmData.length)];
         console.log('rando:', shuffledFilm.original_title)
         setRandomFilm(shuffledFilm);

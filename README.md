@@ -56,7 +56,28 @@ This logic is limited, however, as it allows for repeats. This is something I wi
 -> use randomFilm to Link to filmpage
 -> build FilmPage component. 
 -> find correct API call in Insomnia to return the JSON for the DIRECTOR: credits API call with movie ID
-->
+-> use the react-router-dom which passes a prop called 'match' into every route that is rendered. Inside this 'match' object is another object called 'params', which holds all the matching params where the key is the name we specified when creating the route - in this case, filmID - which I then use to make an axios get request to TMDB API to the 'credits' endpoint, as this contains extra information needed such as director.
+```
+const FilmPage = (props) => {
+
+  const [filmData, setFilmData] = useState({});
+
+  useEffect(() => {
+    const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
+    const filmID = props.match.params.id;
+    console.log("filmID", filmID);
+  
+    axios.get(`https://api.themoviedb.org/3/movie/${filmID}?api_key=${API_KEY}&append_to_response=credits
+    `).then(axiosData => {
+      setFilmData(axiosData.data)
+    })
+  }, [props.match]);
+
+  return (
+  <h2>{filmData.id}</h2>
+  )
+};
+```
 
 
 
