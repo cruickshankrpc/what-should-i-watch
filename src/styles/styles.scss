@@ -1,45 +1,93 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/*** HOMEPAGE ***/
-.home-container {
-  min-height: 100vh;
-  margin: 0;
+
+
+body {
   background-color: rgba(85, 81, 255, 1);
+  min-height: 100%;
+  height: 100%;
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*** HOMEPAGE ***/
+.home_container {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.home_box {
+.home_box, .filmpage_button {
   height: 150px;
   width: 273px;
-  left: 50px;
-  top: 223px;
-  border: 8px solid rgba(0, 0, 0, 1);
-  border-radius: 15px;
+  min-width: 250px;
+  // left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  position: relative;
+
   background: #ffecea;
   box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25);
-  margin-bottom: 50px;
+  border: 8px solid rgba(0, 0, 0, 1);
+  border-radius: 15px;
 }
 
-.home_box p {
-  font-family: "Inter", sans-serif;
-  font-size: 30px;
-  font-style: italic;
-  font-weight: 700;
-  line-height: 36px;
-  letter-spacing: 0em;
-  text-align: left;
-  padding-left: 15px;
+.home_box, .filmpage_button {
+  p {
+
+    font-family: "Inter", sans-serif;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: center;
+    // padding-left: 15px;
+
+  }
+
 }
 
 .cursor_img {
   position: absolute;
   width: 81px;
   height: 129px;
-  left: 266px;
-  top: 400px;
+  margin: 0 0 350px -30px;
+  bottom: 0;
 }
+
+
+
+/*** FILMPAGE ***/
+
+.filmpage_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filmpage_buttons_container {
+  display: flex;
+
+  .filmpage_button {
+    margin-right: 15px;
+
+
+  }
+}
+
+
 
 /*** FOOTER ***/
 footer {
@@ -55,6 +103,3 @@ footer {
   margin-right: 200px;
 }
 
-/* .tofu {
-  right: 0;
-} */

@@ -8,30 +8,24 @@ const FilmPage = (props) => {
   const [directorName, setDirectorName] = useState([]);
 
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
-
-  const [filmList, setFilmList] = useState([]);
   const [randomFilm, setRandomFilm] = useState([]);
 
-  const myFilmList = (() => {
+  const getRandomFilm = (() => {
     axios.get(`https://api.themoviedb.org/3/list/5233088?api_key=${API_KEY}&language=en-US&page=1`)
       .then(film => {
-        // getting the list:
-        setFilmList(film.data.items);
 
         // Logic to get a random film from filmData array
         const filmData = film.data.items;
-        // console.log('filmData1:', filmData)
         const shuffledFilm = filmData[Math.floor(Math.random() * filmData.length) + 1];
         setRandomFilm(shuffledFilm);
       })
   })
 
   useEffect(() => {
-    myFilmList()
+    getRandomFilm()
   }, [])
 
   useEffect(() => {
-    const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
     // props is an object passed from HomePage containing information we passed into URL
     const filmID = props.match.params.id;
 
@@ -61,7 +55,7 @@ const FilmPage = (props) => {
   }
 
   return (
-    <div className="filmpage-container">
+    <div className="filmpage_container">
       <h2 className="title">{filmData.original_title}</h2>
       <p className="overview">{filmData.overview}</p>
       <img
@@ -70,8 +64,17 @@ const FilmPage = (props) => {
         alt="Film Poster"
       />
       <h3 className="director">{directorName}</h3>
+      
+      <div className="filmpage_buttons_container">
       <Link onClick={handleClick}>
-      <button>Try Again</button></Link>
+      <button className="filmpage_button">
+        <p>No way, Jose!</p></button></Link>
+      
+      <Link onClick={handleClick}>
+      <button className="filmpage_button">
+        <p>How do I watch?</p></button></Link>
+        </div>
+
     </div>
   );
 };
