@@ -7,27 +7,23 @@ const HomePage = () => {
   
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
 
-  const [filmList, setFilmList] = useState([]);
   const [randomFilm, setRandomFilm] = useState([]);
 
-  const myFilmList = (() => {
+  const getRandomFilm = (() => {
     axios.get(`https://api.themoviedb.org/3/list/5233088?api_key=${API_KEY}&language=en-US&page=1`)
       .then(film => {
-        // getting the list:
-        setFilmList(film.data.items);
 
         // Logic to get a random film from filmData array
         const filmData = film.data.items;
-        console.log('filmData1:', filmData)
         const shuffledFilm = filmData[Math.floor(Math.random() * filmData.length) + 1];
-        console.log('rando:', shuffledFilm.original_title)
         setRandomFilm(shuffledFilm);
       })
   })
 
   useEffect(() => {
-    myFilmList()
+    getRandomFilm()
   }, [])
+
 
   return (
     <div className="home-container">

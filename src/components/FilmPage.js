@@ -1,10 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
 const FilmPage = (props) => {
+  let history = useHistory();
   const [filmData, setFilmData] = useState([]);
   const [directorName, setDirectorName] = useState([]);
+
+  const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
+
+  const [filmList, setFilmList] = useState([]);
+  const [randomFilm, setRandomFilm] = useState([]);
+
+  const myFilmList = (() => {
+    axios.get(`https://api.themoviedb.org/3/list/5233088?api_key=${API_KEY}&language=en-US&page=1`)
+      .then(film => {
+        // getting the list:
+        setFilmList(film.data.items);
+
+        // Logic to get a random film from filmData array
+        const filmData = film.data.items;
+        // console.log('filmData1:', filmData)
+        const shuffledFilm = filmData[Math.floor(Math.random() * filmData.length) + 1];
+        setRandomFilm(shuffledFilm);
+      })
+  })
+
+  useEffect(() => {
+    myFilmList()
+  }, [])
 
   useEffect(() => {
     const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
@@ -30,7 +54,11 @@ const FilmPage = (props) => {
       })
       
   }, [props.match.params.id]);
-  
+
+  const handleClick = () => {
+    history.push(`/filmpage/${randomFilm.original_title}/${randomFilm.id}`)
+    window.location.reload();
+  }
 
   return (
     <div className="filmpage-container">
@@ -42,9 +70,8 @@ const FilmPage = (props) => {
         alt="Film Poster"
       />
       <h3 className="director">{directorName}</h3>
-      <Link>
-      <button> Shuffle Again
-        </button></Link>
+      <Link onClick={handleClick}>
+      <button>Try Again</button></Link>
     </div>
   );
 };
