@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 
-
 body {
   background-color: rgba(85, 81, 255, 1);
   min-height: 100%;
@@ -9,12 +8,17 @@ body {
   width: auto;
   padding: 0;
   margin: 0;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
 }
 
 a {
   text-decoration: none;
 }
 
+button {
+  outline: none;
+}
 /*** HOMEPAGE ***/
 .home_container {
   height: 100vh;
@@ -52,7 +56,6 @@ a {
     line-height: 36px;
     letter-spacing: 0em;
     text-align: center;
-    // padding-left: 15px;
 
   }
 
@@ -66,7 +69,20 @@ a {
   bottom: 0;
 }
 
+.toggle_button {
+  position: fixed;
+  z-index: 99;
+  right: 0;
+  bottom: 0;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  padding: 10px;
+  background: #ffecea;
+  border: 3px solid rgba(0, 0, 0, 1);
+  border-radius: 5px;
 
+}
 
 /*** FILMPAGE ***/
 
@@ -75,6 +91,27 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.film_container {
+  height: 70%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffecea;
+  box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25);
+  border: 8px solid rgba(0, 0, 0, 1);
+  border-radius: 15px;
+  h2 {
+    font-weight: 700;
+    // line-height: 36px;
+    // letter-spacing: 0em;
+    text-align: center;
+  }
+
+  
 }
 
 .filmpage_buttons_container {

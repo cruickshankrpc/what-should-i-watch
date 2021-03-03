@@ -56,6 +56,9 @@ const FilmPage = (props) => {
 
   return (
     <div className="filmpage_container">
+
+      <div className="film_container">
+      <h1>Shut the f*** up and watch this:</h1>
       <h2 className="title">{filmData.original_title}</h2>
       <p className="overview">{filmData.overview}</p>
       <img
@@ -72,8 +75,10 @@ const FilmPage = (props) => {
       
       <Link onClick={handleClick}>
       <button className="filmpage_button">
-        <p>How do I watch?</p></button></Link>
+        <p>How to watch?</p></button></Link>
         </div>
+
+      </div>
 
     </div>
   );

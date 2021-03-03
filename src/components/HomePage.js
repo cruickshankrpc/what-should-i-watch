@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import cursor from '../cursor.png';
+import Footer from './Footer';
 
 const HomePage = () => {
   
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
   const [randomFilm, setRandomFilm] = useState([]);
   const [clean, setClean] = useState(false);
+  const [color, setColor] = useState('#ffecea');
 
   const getRandomFilm = (() => {
     axios.get(`https://api.themoviedb.org/3/list/5233088?api_key=${API_KEY}&language=en-US&page=1`)
@@ -26,21 +28,36 @@ const HomePage = () => {
 
 
   function toggleButton() {
-    !clean ? setClean(true) : setClean(false)
+    if (!clean) {
+      setClean(true)
+      // setColor('')
+    } else {
+      setClean(false) 
+      setColor('lightgray')
+    }
+    
   }
-
+  console.log('COLOR', color)
 
   return (
     <div className="home_container">
       <div className="home_box">
-        <p className="home_text">{ !clean ? 'What the f*** should I watch ?' : 'Pretty please tell me what to watch?!'}</p>
+        <p className="home_text">{ !clean ? 'What the f*** should I watch ?' : 'Tell me what to watch pretty please'}</p>
       </div>
        <Link to={`filmpage/${randomFilm.original_title}/${randomFilm.id}`}>
        <img className="cursor_img" src={cursor} alt="cursor" />
       </Link>
       {/* <div component={Footer}></div> */}
-      {/* <Footer></Footer> */}
-      <button onClick={toggleButton}>{ !clean ? 'Make it Clean!' : 'Make it Dirty!'}</button>
+      <Footer/>
+
+
+      {/* <button 
+        className="toggle_button" 
+        onClick={toggleButton}
+        style={{ backgroundColor: !clean ? '#ffecea' : 'lightgray'}}
+        // color={color}
+        >
+          { !clean ? 'Make it Clean!' : 'Make it Dirty!'}</button> */}
     </div>
   );
 };
