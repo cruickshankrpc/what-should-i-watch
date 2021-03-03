@@ -30,6 +30,7 @@ const FilmPage = (props) => {
       })
       
   }, [props.match.params.id]);
+  
 
   return (
     <div className="filmpage-container">
@@ -41,6 +42,9 @@ const FilmPage = (props) => {
         alt="Film Poster"
       />
       <h3 className="director">{directorName}</h3>
+      <Link>
+      <button> Shuffle Again
+        </button></Link>
     </div>
   );
 };

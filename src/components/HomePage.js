@@ -19,7 +19,7 @@ const HomePage = () => {
         // Logic to get a random film from filmData array
         const filmData = film.data.items;
         console.log('filmData1:', filmData)
-        const shuffledFilm = filmData[Math.floor(Math.random() * filmData.length)];
+        const shuffledFilm = filmData[Math.floor(Math.random() * filmData.length) + 1];
         console.log('rando:', shuffledFilm.original_title)
         setRandomFilm(shuffledFilm);
       })

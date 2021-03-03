@@ -57,7 +57,7 @@ This logic is limited, however, as it allows for repeats. This is something I wi
 -> build FilmPage component. 
 -> find correct API call in Insomnia to return the JSON for the DIRECTOR: credits API call with movie ID
 -> use the react-router-dom which passes a prop called 'match' into every route that is rendered. Inside this 'match' object is another object called 'params', which holds all the matching params where the key is the name we specified when creating the route - in this case, filmID & filmName:
-```
+```jsx
 match:
 isExact: true
 params: {name: "American Psycho", id: "1359"}
@@ -66,8 +66,8 @@ url: "/filmpage/American Psycho/1359"
 ```
 
 
-I then use the filmID to make an axios get request to TMDB API to the 'credits' endpoint for that film, as this contains extra information needed such as the director name.
-```
+-> I then use the filmID to make an axios get request to TMDB API to the 'credits' endpoint for that film, as this contains extra information needed such as the director name.
+```js
 const FilmPage = (props) => {
 
   const [filmData, setFilmData] = useState({});
@@ -88,7 +88,22 @@ const FilmPage = (props) => {
   )
 };
 ```
+-> I then used CHAINING from the initial axios call by returning the axios data: (this was tricky at first because I initially wrote this logic outside the useEffect, and forgot to create some state for setting the director name, meaning it worked initially, but then broke when I refreshed the page or tried again.)
 
+```js
+      .then((axiosData) => {
+        setFilmData(axiosData.data);
+        return axiosData.data
+        // returning the data to CHAIN below: data = axiosData.data
+      }).then((data) => {
+        // use the find() Array method to find obj containing key value of 'Job: "Director"'
+        let crewObj = data.credits.crew.find((obj) => obj.job === "Director")
+        // grab the name of the director from the obj using dot notation (property accessor)
+        let director = crewObj.name;
+        // update directorName state
+        setDirectorName(director);
+      })
+```
 
 
 
