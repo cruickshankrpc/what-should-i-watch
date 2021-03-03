@@ -33,7 +33,6 @@ button {
   height: 150px;
   width: 273px;
   min-width: 250px;
-  // left: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +71,7 @@ button {
 .toggle_button {
   position: fixed;
   z-index: 99;
-  right: 0;
+  right: 500;
   bottom: 0;
   font-family: "Inter", sans-serif;
   font-style: italic;
@@ -95,7 +94,8 @@ button {
 
 .film_container {
   height: 70%;
-  width: 70%;
+  width: 80%;
+  margin: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,10 +104,11 @@ button {
   box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25);
   border: 8px solid rgba(0, 0, 0, 1);
   border-radius: 15px;
+  h1 {
+    font-size: 3rem;
+  }
   h2 {
     font-weight: 700;
-    // line-height: 36px;
-    // letter-spacing: 0em;
     text-align: center;
   }
 
@@ -128,15 +129,18 @@ button {
 
 /*** FOOTER ***/
 footer {
-  /* display: flex;
-  justify-content: space-between; */
   position: fixed;
-  /* margin-top: auto; */
+  width: 100%;
   bottom: 0;
-  /* left: 0; */
 }
 
 .logo {
-  margin-right: 200px;
+  position: fixed;
+  left: 0
+}
+
+.tofu {
+  position: fixed;
+  right: 0;
 }
 

@@ -48,16 +48,18 @@ const HomePage = () => {
        <img className="cursor_img" src={cursor} alt="cursor" />
       </Link>
       {/* <div component={Footer}></div> */}
-      <Footer/>
-
-
-      {/* <button 
+      <Footer onClick={toggleButton}
+      />
+            <button 
         className="toggle_button" 
         onClick={toggleButton}
         style={{ backgroundColor: !clean ? '#ffecea' : 'lightgray'}}
         // color={color}
         >
-          { !clean ? 'Make it Clean!' : 'Make it Dirty!'}</button> */}
+          { !clean ? 'Keep it Clean!' : 'Make it Dirty!'}</button>
+
+
+
     </div>
   );
 };
