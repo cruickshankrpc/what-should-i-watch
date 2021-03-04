@@ -19,6 +19,11 @@ a {
 button {
   outline: none;
 }
+
+button:hover {
+  background-color: #f8cec9;
+}
+
 /*** HOMEPAGE ***/
 .home_container {
   height: 100vh;
@@ -111,36 +116,73 @@ button {
     font-weight: 700;
     text-align: center;
   }
-
   
 }
 
+.film_info {
+  display: flex;
+  flex: 0.5;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.film_left {
+  align-items: center;
+  justify-content: center;
+  flex: 0.5;
+  padding: 20px;
+  img {
+    width: 500px
+  }
+}
+
+.film_right {
+  flex: 0.5;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle_button_filmPage {
+  right: 500;
+  bottom: 0;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  padding: 10px;
+  background: #ffecea;
+  border: 3px solid rgba(0, 0, 0, 1);
+  border-radius: 5px;
+}
+
+
 .filmpage_buttons_container {
+  position: relative;
+  bottom: -100px;
   display: flex;
 
   .filmpage_button {
     margin-right: 15px;
-
-
   }
 }
 
 
-
 /*** FOOTER ***/
 footer {
-  position: fixed;
+  position: absolute;
   width: 100%;
-  bottom: 0;
 }
 
 .logo {
   position: fixed;
-  left: 0
+  left: 0;
+  bottom: 0;
 }
 
 .tofu {
   position: fixed;
   right: 0;
+  bottom: 0;
 }
 
