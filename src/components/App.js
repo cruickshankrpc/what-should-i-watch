@@ -5,12 +5,12 @@ import {
   Switch,
 } from "react-router-dom";
 
-import HomePage from "./components/HomePage";
-import FilmPage from "./components/FilmPage";
-import Footer from "./components/Footer";
-import cursor from "./cursor.png";
+import HomePage from "./HomePage";
+import FilmPage from "./FilmPage";
+// import Footer from "./Footer";
+// import cursor from "../media/cursor.png";
 
-import "./styles/styles.scss";
+import "../styles.scss";
 
 function App() {
   return (

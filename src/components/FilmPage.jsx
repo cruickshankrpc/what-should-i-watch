@@ -65,6 +65,7 @@ const FilmPage = (props) => {
   console.log("FILM TITLE TYPE>>>", typeof(filmData.original_title))
 
 
+  // Logic to change text & button colour
   function toggleButton() {
     if (!clean) {
       setClean(true);
@@ -75,7 +76,7 @@ const FilmPage = (props) => {
     }
   }
 
-  // logic to convert string, remove whitespace, add dash to querystring
+  // logic to convert string, remove whitespace, add dash to querystring (not needed)
   const filmDashName = (input) => {
     let newStr = input.split(" ");
     let searchStr = newStr.join("-");
