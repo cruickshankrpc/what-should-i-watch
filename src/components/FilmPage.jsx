@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
+// import Button from './Button';
 import Footer from "./Footer";
 
 const FilmPage = (props) => {
@@ -69,7 +70,6 @@ const FilmPage = (props) => {
   function toggleButton() {
     if (!clean) {
       setClean(true);
-      // setColor('')
     } else {
       setClean(false);
       setColor("lightgray");
@@ -84,7 +84,6 @@ const FilmPage = (props) => {
   }
 
   console.log('FILM GENRE', typeof(filmData.genres))
-  // console.log('FILM GENRE', filmData.genres)
 
   return (
     <div className="filmpage_container">
@@ -92,7 +91,7 @@ const FilmPage = (props) => {
         <h1>{!clean
             ? "Shut the f*** up and watch this:"
             : "Hey, how about this?"}</h1>
-                  <button
+    <button
         className="toggle_button_filmPage"
         onClick={toggleButton}
         style={{ backgroundColor: !clean ? "#ffecea" : "lightgray" }}

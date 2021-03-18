@@ -14,7 +14,6 @@ import "../styles.scss";
 
 function App() {
   return (
-    // <HashRouter>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -23,7 +22,6 @@ function App() {
           <Route path="/filmpage/:name/:id" component={FilmPage} />
         </Switch>
       </Router>
-    // </HashRouter>
   );
 }
 

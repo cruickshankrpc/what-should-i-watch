@@ -32,6 +32,27 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  Button {
+    position: fixed;
+    z-index: 99;
+    right: 500;
+    bottom: 0;
+    font-family: "Inter", sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    padding: 10px;
+    background: #ffecea;
+    border: 3px solid rgba(0, 0, 0, 1);
+    border-radius: 5px;
+  }
+  .cursor_img {
+    position: absolute;
+    width: 81px;
+    height: 129px;
+    margin: 0 0 350px -30px;
+    bottom: 0;
+  }
 }
 
 .home_box, .filmpage_button {
@@ -43,16 +64,11 @@ button:hover {
   align-items: center;
   padding-bottom: 10px;
   position: relative;
-
   background: #ffecea;
   box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25);
   border: 8px solid rgba(0, 0, 0, 1);
   border-radius: 15px;
-}
-
-.home_box, .filmpage_button {
   p {
-
     font-family: "Inter", sans-serif;
     font-size: 30px;
     font-style: italic;
@@ -60,33 +76,9 @@ button:hover {
     line-height: 36px;
     letter-spacing: 0em;
     text-align: center;
-
   }
-
 }
 
-.cursor_img {
-  position: absolute;
-  width: 81px;
-  height: 129px;
-  margin: 0 0 350px -30px;
-  bottom: 0;
-}
-
-.toggle_button {
-  position: fixed;
-  z-index: 99;
-  right: 500;
-  bottom: 0;
-  font-family: "Inter", sans-serif;
-  font-style: italic;
-  font-weight: 500;
-  padding: 10px;
-  background: #ffecea;
-  border: 3px solid rgba(0, 0, 0, 1);
-  border-radius: 5px;
-
-}
 
 /*** FILMPAGE ***/
 
@@ -116,7 +108,6 @@ button:hover {
     font-weight: 700;
     text-align: center;
   }
-  
 }
 
 .film_info {
@@ -125,7 +116,6 @@ button:hover {
   padding: 20px;
   align-items: center;
   justify-content: center;
-
 }
 
 .film_left {

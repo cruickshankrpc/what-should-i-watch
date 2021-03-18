@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import cursor from "../media/cursor.png";
+import Button from './Button';
 import Footer from "./Footer";
 
 const HomePage = () => {
@@ -37,7 +38,7 @@ const HomePage = () => {
       setColor("lightgray");
     }
   }
-  console.log("COLOR", color);
+  // console.log("COLOR", color);
 
   return (
     <div className="home_container">
@@ -59,6 +60,7 @@ const HomePage = () => {
       >
         {!clean ? "Keep it Clean!" : "Make it Dirty!"}
       </button>
+      {/* <Button /> */}
     </div>
   );
 };
