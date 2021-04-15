@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
-// import Button from './Button';
+import Button from "./Button";
 import Footer from "./Footer";
 
 const FilmPage = (props) => {
@@ -10,8 +10,8 @@ const FilmPage = (props) => {
   let history = useHistory();
   const [filmData, setFilmData] = useState([]);
   const [directorName, setDirectorName] = useState([]);
-  const [clean, setClean] = useState(false);
-  const [color, setColor] = useState("#ffecea");
+  const [isClean, setClean] = useState(false);
+  // const [color, setColor] = useState("#ffecea");
 
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
   const [randomFilm, setRandomFilm] = useState([]);
@@ -53,7 +53,7 @@ const FilmPage = (props) => {
         let director = crewObj.name;
         // update directorName state
         setDirectorName(director);
-        });
+      });
   }, [props.match.params.id]);
 
   const handleClick = () => {
@@ -62,64 +62,59 @@ const FilmPage = (props) => {
   };
 
   console.log("FILMDATA>>>", filmData);
-  console.log("FILM TITLE>>>", filmData.original_title)
-  console.log("FILM TITLE TYPE>>>", typeof(filmData.original_title))
-
+  console.log("FILM TITLE>>>", filmData.original_title);
+  console.log("FILM TITLE TYPE>>>", typeof filmData.original_title);
 
   // Logic to change text & button colour
   function toggleButton() {
-    if (!clean) {
+    if (!isClean) {
       setClean(true);
     } else {
       setClean(false);
-      setColor("lightgray");
     }
   }
 
-  // logic to convert string, remove whitespace, add dash to querystring (not needed)
-  const filmDashName = (input) => {
-    let newStr = input.split(" ");
-    let searchStr = newStr.join("-");
-    return searchStr;
-  }
-
-  console.log('FILM GENRE', typeof(filmData.genres))
+  console.log("FILM GENRE", typeof filmData.genres);
 
   return (
     <div className="filmpage_container">
       <div className="film_container">
-        <h1>{!clean
-            ? "Shut the f*** up and watch this:"
-            : "Hey, how about this?"}</h1>
-    <button
-        className="toggle_button_filmPage"
-        onClick={toggleButton}
-        style={{ backgroundColor: !clean ? "#ffecea" : "lightgray" }}
-      >
-        {!clean ? "Keep it Clean!" : "Make it Dirty!"}
-      </button>
+        <h1>
+          {isClean
+            ? "Hey, how about this?"
+            : "Shut the f*** up and watch this:"}
+        </h1>
+        <button
+          className="toggle_button_filmPage"
+          onClick={toggleButton}
+          style={{ backgroundColor: isClean ? "lightgray" : "#ffecea" }}
+        >
+          {isClean ? "Make it Dirty!" : "Keep it Clean!"}
+        </button>
 
-<div className="film_info">
-        <div className="film_left">
-          <img
-            className="poster"
-            src={`https://image.tmdb.org/t/p/w500/${filmData.poster_path}`}
-            alt="Film Poster"
-          />
-        </div>
-
-        <div className="film_right">
-          <h2 className="title">{filmData.original_title}</h2>
-          <h3 className="release_date">
-            {moment(filmData.release_date).format("YYYY")}
-          </h3>
-          <div className="genre">
-            {filmData.genres && filmData.genres.map(genre => {
-              return <h3>{genre.name}</h3>})}
+        <div className="film_info">
+          <div className="film_left">
+            <img
+              className="poster"
+              src={`https://image.tmdb.org/t/p/w500/${filmData.poster_path}`}
+              alt="Film Poster"
+            />
           </div>
-          <p className="overview">{filmData.overview}</p>
-          <h3 className="director">Director: {directorName}</h3>
-        </div>
+
+          <div className="film_right">
+            <h2 className="title">
+              {filmData.original_title} (
+              {moment(filmData.release_date).format("YYYY")})
+            </h2>
+            <div className="genre">
+              {filmData.genres &&
+                filmData.genres.map((genre) => {
+                  return <h3>{genre.name}</h3>;
+                })}
+            </div>
+            <p className="overview">{filmData.overview}</p>
+            <h3 className="director">Director: {directorName}</h3>
+          </div>
         </div>
 
         <div className="filmpage_buttons_container">
@@ -128,17 +123,15 @@ const FilmPage = (props) => {
               <p>No way, Jose!</p>
             </button>
           </Link>
-
-            <a
-              href={`https://www.themoviedb.org/movie/${filmID}-${filmData.original_title}/watch?language=en-GB`}
-            >
-              <button className="filmpage_button">
-                <p>How do I watch?</p>
-              </button>
-            </a>
+          <a
+            href={`https://www.themoviedb.org/movie/${filmID}-${filmData.original_title}/watch?language=en-GB`}
+          >
+            <button className="filmpage_button">
+              <p>How do I watch?</p>
+            </button>
+          </a>
         </div>
       </div>
-
       <Footer />
     </div>
   );

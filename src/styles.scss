@@ -102,7 +102,9 @@ button:hover {
   border: 8px solid rgba(0, 0, 0, 1);
   border-radius: 15px;
   h1 {
-    font-size: 3rem;
+    font-size: 5vh;
+    // font-size: 3rem;
+
   }
   h2 {
     font-weight: 700;
@@ -122,9 +124,10 @@ button:hover {
   align-items: center;
   justify-content: center;
   flex: 0.5;
+  width: 50%;
   padding: 20px;
   img {
-    width: 500px
+    width: 80%;
   }
 }
 
@@ -176,3 +179,24 @@ footer {
   bottom: 0;
 }
 
+@media screen and (max-width: 1000px){
+  .filmpage_container{
+    margin-bottom: 20px;
+  }
+  .film_container {
+    width: 85%;
+    padding: 10px;
+  }
+
+  .film_info {
+    display: flex;
+    flex-direction: column;
+  }
+  .film-left {
+    width: 90%;
+    }
+  .film_left img {
+    width: 100%;
+  }
+  
+}

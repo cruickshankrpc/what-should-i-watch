@@ -8,7 +8,7 @@ import Footer from "./Footer";
 const HomePage = () => {
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
   const [randomFilm, setRandomFilm] = useState([]);
-  const [clean, setClean] = useState(false);
+  const [isClean, setClean] = useState(false);
   const [color, setColor] = useState("#ffecea");
 
   const getRandomFilm = () => {
@@ -30,7 +30,7 @@ const HomePage = () => {
   }, []);
 
   function toggleButton() {
-    if (!clean) {
+    if (!isClean) {
       setClean(true);
       // setColor('')
     } else {
@@ -44,7 +44,7 @@ const HomePage = () => {
     <div className="home_container">
       <div className="home_box">
         <p className="home_text">
-          {!clean
+          {!isClean
             ? "What the f*** should I watch ?"
             : "Tell me what to watch pretty please"}
         </p>
@@ -56,9 +56,9 @@ const HomePage = () => {
       <button
         className="toggle_button"
         onClick={toggleButton}
-        style={{ backgroundColor: !clean ? "#ffecea" : "lightgray" }}
+        style={{ backgroundColor: isClean ? "#ffecea" : "lightgray" }}
       >
-        {!clean ? "Keep it Clean!" : "Make it Dirty!"}
+        {!isClean ? "Keep it Clean!" : "Make it Dirty!"}
       </button>
       {/* <Button /> */}
     </div>
