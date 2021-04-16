@@ -28,6 +28,7 @@ button:hover {
 .home_container {
   height: 100vh;
   width: 100vw;
+  min-width: 300px; 
   margin: 0;
   display: flex;
   align-items: center;
@@ -47,18 +48,21 @@ button:hover {
     border-radius: 5px;
   }
   .cursor_img {
-    position: absolute;
+    position: relative;
     width: 81px;
     height: 129px;
-    margin: 0 0 350px -30px;
-    bottom: 0;
+    margin: 0 0 -170px -40px;
+    // right: 450;
+    // z-index: 99;
+    // bottom: 0;
   }
 }
 
 .home_box, .filmpage_button {
   height: 150px;
   width: 273px;
-  min-width: 250px;
+  min-width: 175px;
+  min-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +70,7 @@ button:hover {
   position: relative;
   background: #ffecea;
   box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25);
-  border: 8px solid rgba(0, 0, 0, 1);
+  border: 7px solid rgba(0, 0, 0, 1);
   border-radius: 15px;
   p {
     font-family: "Inter", sans-serif;
@@ -83,16 +87,20 @@ button:hover {
 /*** FILMPAGE ***/
 
 .filmpage_container {
+  // height: 100vh;
+  // width: 100vw;
+  // width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 20px;
+  // margin-bottom: 150px;
 }
 
 .film_container {
-  height: 70%;
   width: 80%;
-  margin: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,14 +109,21 @@ button:hover {
   box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25);
   border: 8px solid rgba(0, 0, 0, 1);
   border-radius: 15px;
-  h1 {
+  padding: 15px;
+  .heading {
     font-size: 5vh;
-    // font-size: 3rem;
-
-  }
-  h2 {
-    font-weight: 700;
     text-align: center;
+  }
+  .toggle_button_filmPage {
+    right: 500;
+    bottom: 0;
+    font-family: "Inter", sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    padding: 10px;
+    background: #ffecea;
+    border: 3px solid rgba(0, 0, 0, 1);
+    border-radius: 5px;
   }
 }
 
@@ -118,6 +133,21 @@ button:hover {
   padding: 20px;
   align-items: center;
   justify-content: center;
+  .title {
+    font-size: 3vh;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: underline;
+  }
+  .genre {
+    line-height: 1vh;
+  }
+    .genre, .director {
+    font-size: 2vh;
+  }
+  p {
+    font-size: 2vh;
+  }
 }
 
 .film_left {
@@ -135,29 +165,22 @@ button:hover {
   flex: 0.5;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
-.toggle_button_filmPage {
-  right: 500;
-  bottom: 0;
-  font-family: "Inter", sans-serif;
-  font-style: italic;
-  font-weight: 500;
+.film_right > * {
   padding: 10px;
-  background: #ffecea;
-  border: 3px solid rgba(0, 0, 0, 1);
-  border-radius: 5px;
 }
 
 
 .filmpage_buttons_container {
   position: relative;
-  bottom: -100px;
+  bottom: 50px;
   display: flex;
-
-  .filmpage_button {
-    margin-right: 15px;
-  }
+ 
+}
+.filmpage_button {
+  margin-right: 15px;
 }
 
 
@@ -185,9 +208,9 @@ footer {
   }
   .film_container {
     width: 85%;
-    padding: 10px;
-  }
+    border: 6px solid rgba(0, 0, 0, 1);
 
+  }
   .film_info {
     display: flex;
     flex-direction: column;
@@ -198,5 +221,19 @@ footer {
   .film_left img {
     width: 100%;
   }
+  .film_right {
+    margin-bottom: 20px;
+  }
+  // .filmpage_buttons_container {
+  //   display: flex;
+  //   justify-content: center;
+  //   // max-width: 375px;
+
+  // }
   
+  .filmpage_button {
+    width: 150px;
+    border: 6px solid rgba(0, 0, 0, 1);
+    margin: 0 5px 0 5px;
+  }
 }

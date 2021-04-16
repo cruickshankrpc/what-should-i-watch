@@ -48,10 +48,12 @@ const HomePage = () => {
             ? "What the f*** should I watch ?"
             : "Tell me what to watch pretty please"}
         </p>
+
       </div>
       <Link to={`filmpage/${randomFilm.original_title}/${randomFilm.id}`}>
         <img className="cursor_img" src={cursor} alt="cursor" />
       </Link>
+ 
       <Footer />
       <button
         className="toggle_button"
@@ -60,7 +62,6 @@ const HomePage = () => {
       >
         {!isClean ? "Keep it Clean!" : "Make it Dirty!"}
       </button>
-      {/* <Button /> */}
     </div>
   );
 };

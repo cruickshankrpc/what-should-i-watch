@@ -79,7 +79,7 @@ const FilmPage = (props) => {
   return (
     <div className="filmpage_container">
       <div className="film_container">
-        <h1>
+        <h1 className="heading">
           {isClean
             ? "Hey, how about this?"
             : "Shut the f*** up and watch this:"}
@@ -109,18 +109,18 @@ const FilmPage = (props) => {
             <div className="genre">
               {filmData.genres &&
                 filmData.genres.map((genre) => {
-                  return <h3>{genre.name}</h3>;
+                  return <h4>{genre.name}</h4>;
                 })}
             </div>
             <p className="overview">{filmData.overview}</p>
-            <h3 className="director">Director: {directorName}</h3>
+            <h4 className="director">Director: {directorName}</h4>
           </div>
         </div>
-
-        <div className="filmpage_buttons_container">
+      </div>
+      <div className="filmpage_buttons_container">
           <Link onClick={handleClick}>
             <button className="filmpage_button">
-              <p>No way, Jose!</p>
+              <p>{isClean ? "Try again pretty pls" : "Try again, a**hole" }</p>
             </button>
           </Link>
           <a
@@ -131,7 +131,6 @@ const FilmPage = (props) => {
             </button>
           </a>
         </div>
-      </div>
       <Footer />
     </div>
   );
