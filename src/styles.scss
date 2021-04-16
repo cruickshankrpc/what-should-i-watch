@@ -52,9 +52,6 @@ button:hover {
     width: 81px;
     height: 129px;
     margin: 0 0 -170px -40px;
-    // right: 450;
-    // z-index: 99;
-    // bottom: 0;
   }
 }
 
@@ -151,6 +148,7 @@ button:hover {
 }
 
 .film_left {
+  display: flex;
   align-items: center;
   justify-content: center;
   flex: 0.5;
@@ -158,6 +156,8 @@ button:hover {
   padding: 20px;
   img {
     width: 80%;
+    border-radius: 5px;
+    margin: 15px;
   }
 }
 
@@ -209,31 +209,30 @@ footer {
   .film_container {
     width: 85%;
     border: 6px solid rgba(0, 0, 0, 1);
-
   }
   .film_info {
     display: flex;
     flex-direction: column;
   }
-  .film-left {
+  .film_left {
     width: 90%;
     }
   .film_left img {
-    width: 100%;
+    width: 85%;
   }
   .film_right {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    padding: 0;
   }
-  // .filmpage_buttons_container {
-  //   display: flex;
-  //   justify-content: center;
-  //   // max-width: 375px;
-
-  // }
-  
+  .film_right > * {
+    padding: 10px;
+  }
   .filmpage_button {
     width: 150px;
     border: 6px solid rgba(0, 0, 0, 1);
     margin: 0 5px 0 5px;
+    p {
+      font-size: 1.5rem;
+    }
   }
 }
