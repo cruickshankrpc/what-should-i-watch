@@ -7,11 +7,14 @@ import Footer from "./Footer";
 
 const FilmPage = (props) => {
   let filmID = props.match.params.id;
+  let data = props.filmData
   let history = useHistory();
   const [filmData, setFilmData] = useState([]);
   const [directorName, setDirectorName] = useState([]);
   const [isClean, setClean] = useState(false);
   // const [color, setColor] = useState("#ffecea");
+
+  console.log("FILMDATA>>", data)
 
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
   const [randomFilm, setRandomFilm] = useState([]);
@@ -24,7 +27,7 @@ const FilmPage = (props) => {
       .then((film) => {
         // Logic to get a random film from filmData array
         const filmData = film.data.items;
-        const shuffledFilm =
+        const shuffledFilm = filmData &&
           filmData[Math.floor(Math.random() * filmData.length) + 1];
         setRandomFilm(shuffledFilm);
       });

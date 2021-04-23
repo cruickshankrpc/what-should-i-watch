@@ -8,6 +8,7 @@ import Footer from "./Footer";
 const HomePage = () => {
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
   const [randomFilm, setRandomFilm] = useState([]);
+  const [data, setData] = useState([]);
   const [isClean, setClean] = useState(false);
   const [color, setColor] = useState("#ffecea");
 
@@ -19,10 +20,25 @@ const HomePage = () => {
       .then((film) => {
         // Logic to get a random film from filmData array
         const filmData = film.data.items;
-        const shuffledFilm =
-          filmData[Math.floor(Math.random() * filmData.length) + 1];
-        setRandomFilm(shuffledFilm);
-      });
+        console.log(filmData)
+        setData(filmData);
+        const shuffledFilm = filmData[Math.floor(Math.random() * filmData.length) + 1];
+        setRandomFilm(shuffledFilm)
+      })
+      .catch(err => {
+        if (err.response) {
+          // request made and server responded
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else if (err.request) {
+          // req was made but no response received 
+          console.log(err.request);
+        } else {
+          // something happened in setting up the request that triggered an error
+          console.log('Error:', err.message);
+        }
+      })
   };
 
   useEffect(() => {
@@ -40,6 +56,8 @@ const HomePage = () => {
   }
   // console.log("COLOR", color);
 
+  // {}
+
   return (
     <div className="home_container">
       <div className="home_box">
@@ -50,7 +68,7 @@ const HomePage = () => {
         </p>
 
       </div>
-      <Link to={`filmpage/${randomFilm.original_title}/${randomFilm.id}`}>
+      <Link to={`filmpage${randomFilm.original_title}/${randomFilm.id}`} filmData={data}>
         <img className="cursor_img" src={cursor} alt="cursor" />
       </Link>
  
