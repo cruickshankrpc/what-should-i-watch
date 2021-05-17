@@ -22,7 +22,7 @@ I had a lot of fun making the design for the app in [Figma](https://www.figma.co
 ##### Desktop
 
 <p align="center">
-<img src="/what-should-i-watch/media/wsiw-desktop.gif" width="800" >
+<img src="/media/wsiw-desktop.gif" width="800" >
 </p>
 
 #### Set up 
