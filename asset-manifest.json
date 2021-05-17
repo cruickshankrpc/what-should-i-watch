@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/what-should-i-watch/static/css/main.645698c8.chunk.css",
+    "main.js": "/what-should-i-watch/static/js/main.391e09d8.chunk.js",
+    "main.js.map": "/what-should-i-watch/static/js/main.391e09d8.chunk.js.map",
+    "runtime-main.js": "/what-should-i-watch/static/js/runtime-main.1ded73db.js",
+    "runtime-main.js.map": "/what-should-i-watch/static/js/runtime-main.1ded73db.js.map",
+    "static/js/2.f50c28c6.chunk.js": "/what-should-i-watch/static/js/2.f50c28c6.chunk.js",
+    "static/js/2.f50c28c6.chunk.js.map": "/what-should-i-watch/static/js/2.f50c28c6.chunk.js.map",
+    "static/js/3.84b60d8e.chunk.js": "/what-should-i-watch/static/js/3.84b60d8e.chunk.js",
+    "static/js/3.84b60d8e.chunk.js.map": "/what-should-i-watch/static/js/3.84b60d8e.chunk.js.map",
+    "index.html": "/what-should-i-watch/index.html",
+    "static/css/main.645698c8.chunk.css.map": "/what-should-i-watch/static/css/main.645698c8.chunk.css.map",
+    "static/js/2.f50c28c6.chunk.js.LICENSE.txt": "/what-should-i-watch/static/js/2.f50c28c6.chunk.js.LICENSE.txt",
+    "static/media/cursor.dde699bf.png": "/what-should-i-watch/static/media/cursor.dde699bf.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1ded73db.js",
+    "static/js/2.f50c28c6.chunk.js",
+    "static/css/main.645698c8.chunk.css",
+    "static/js/main.391e09d8.chunk.js"
+  ]
+}
