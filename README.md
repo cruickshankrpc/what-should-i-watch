@@ -12,11 +12,11 @@ Fun little (made by womxn) film randomiser inspired by ["Where the f*** should I
 
 I had a lot of fun making the design for the app in [Figma](https://www.figma.com/file/GfhSUCNhyxbnGCkMImUDuM/What-Should-I-Watch%3F%3F); incorporating a fun, simple,  ~ millenial ~ aesthetic with bold colours, a sans-serif font, and throwback pixellated icons: 
 
-##### Mobile
+<!-- ##### Mobile -->
 
-<p align="center">
+<!-- <p align="center">
 <img src="/media/what-should-i-watch-mobile_iphone12black_portrait.png" alt="mobile home" width="200" >
-</p>
+</p> -->
 
 
 ##### Desktop

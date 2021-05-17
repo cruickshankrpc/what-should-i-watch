@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
-import Button from "./Button";
 import Footer from "./Footer";
 
 const FilmPage = (props) => {
@@ -30,7 +29,21 @@ const FilmPage = (props) => {
         const shuffledFilm = filmData &&
           filmData[Math.floor(Math.random() * filmData.length) + 1];
         setRandomFilm(shuffledFilm);
-      });
+      })
+      .catch(err => {
+        if (err.response) {
+          // request made and server responded
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else if (err.request) {
+          // req was made but no response received 
+          console.log(err.request);
+        } else {
+          // something happened in setting up the request that triggered an error
+          console.log('Error:', err.message);
+        }
+      })
   };
 
   useEffect(() => {
@@ -64,10 +77,6 @@ const FilmPage = (props) => {
     window.location.reload();
   };
 
-  console.log("FILMDATA>>>", filmData);
-  console.log("FILM TITLE>>>", filmData.original_title);
-  console.log("FILM TITLE TYPE>>>", typeof filmData.original_title);
-
   // Logic to change text & button colour
   function toggleButton() {
     if (!isClean) {
@@ -76,8 +85,6 @@ const FilmPage = (props) => {
       setClean(false);
     }
   }
-
-  console.log("FILM GENRE", typeof filmData.genres);
 
   return (
     <div className="filmpage_container">
@@ -97,7 +104,7 @@ const FilmPage = (props) => {
 
         <div className="film_info">
           <div className="film_left">
-            <img
+              <img
               className="poster"
               src={`https://image.tmdb.org/t/p/w500/${filmData.poster_path}`}
               alt="Film Poster"
@@ -123,7 +130,7 @@ const FilmPage = (props) => {
       <div className="filmpage_buttons_container">
           <Link onClick={handleClick}>
             <button className="filmpage_button">
-              <p>{isClean ? "Try again pretty pls" : "Try again, a**hole" }</p>
+              <p>{isClean ? "Try again pretty pls" : "Try again..." }</p>
             </button>
           </Link>
           <a

@@ -2,8 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import cursor from "../media/cursor.png";
-import Button from './Button';
+// import Button from './Button';
 import Footer from "./Footer";
+
+
+// * TODO:
+/*
+- transfer film data as prop over to filmPage, remove axios request 
+- scrape data, shuffle logic from that array
+- learn REDUX
+*/
 
 const HomePage = () => {
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
@@ -20,7 +28,6 @@ const HomePage = () => {
       .then((film) => {
         // Logic to get a random film from filmData array
         const filmData = film.data.items;
-        console.log(filmData)
         setData(filmData);
         const shuffledFilm = filmData[Math.floor(Math.random() * filmData.length) + 1];
         setRandomFilm(shuffledFilm)
@@ -41,6 +48,35 @@ const HomePage = () => {
       })
   };
 
+  console.log('DATA>>', data);
+
+  const shuffledFilm = data.splice(Math.floor(Math.random() * data.length),  1);
+
+  // var filmshuffled =data;
+  // localStorage.setItem('shuffledFilm', JSON.stringify(shuffledFilm))
+
+  // var retrievedFilm = localStorage.getItem('shuffledFilm');
+
+  // console.log('retried film >>>', JSON.parse(retrievedFilm))
+
+  // function shuffleArray(data) {
+  //   for (let i = data.length — 1; i > 0; i--){
+  //     let randomIndex = Math.floor(Math.random() * (i + 1));
+  //     let itemAtIndex = array[randomIndex];
+  //     data[randomIndex] = data[i]
+  //     data[i] = itemAtIndex;
+  //   }
+  //   return data;
+  // }
+
+  // data.shuffleArray()
+
+  // alert(data);
+  
+
+  console.log('SHUFFLED', typeof(shuffledFilm))
+
+
   useEffect(() => {
     getRandomFilm();
   }, []);
@@ -54,9 +90,6 @@ const HomePage = () => {
       setColor("lightgray");
     }
   }
-  // console.log("COLOR", color);
-
-  // {}
 
   return (
     <div className="home_container">
@@ -68,7 +101,7 @@ const HomePage = () => {
         </p>
 
       </div>
-      <Link to={`filmpage${randomFilm.original_title}/${randomFilm.id}`} filmData={data}>
+      <Link to={`filmpage/${randomFilm.original_title}/${randomFilm.id}`}>
         <img className="cursor_img" src={cursor} alt="cursor" />
       </Link>
  
